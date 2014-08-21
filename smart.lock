@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "phantom": {}
+    },
+    "packages": {
+      "phantom": {
+        "git": "https://github.com/zaku-eu/meteor-phantom.git",
+        "tag": "v0.0.1",
+        "commit": "95db53a2b607e542caffa4bfb2a3517ec92f3898"
+      }
+    }
+  }
+}
