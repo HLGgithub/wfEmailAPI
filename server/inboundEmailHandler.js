@@ -43,7 +43,7 @@ Meteor.methods({
                                         ph.exit();
                                         console.log("Exiting...");
 
-                                    }, 11000);
+                                    	}, 15000);
 
                                     console.log("Done pressing keys...");
                                 }, 3000);
