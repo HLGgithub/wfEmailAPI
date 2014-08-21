@@ -1,5 +1,6 @@
 {
   "packages": {
-    "phantom": {}
+    "phantom": {},
+    "iron-router": {}
   }
 }
