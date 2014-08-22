@@ -43,7 +43,7 @@ Router.map(function() {
       if ((typeof subj) === 'undefined'){
         subj = 'SUBJECT WAS UNDEFINED';
         console.log('subject wasnt defined..');
-        txt = 'BODY WAS PBBLY NOT DEFINIED EITHER';
+        txt = 'BODY WAS PBBLY NOT DEFINIED EITHER, so we will use www.novoed.com/scaling-up-your-venture-without-screwing-up';
       }
       else
       {

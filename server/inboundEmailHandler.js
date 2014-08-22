@@ -34,9 +34,29 @@ Meteor.methods({
                             //
                             setTimeout(function(){
                                 page.sendEvent('keypress', 16777220, null, null, 0x02000000);
-                                console.log("Held down shift...");
+                                console.log("Held down shift + return...");
                                 setTimeout(function(){
 
+                                    // Workflowy messes with the subheading whenever it detects there is
+                                    // a web address being typed in. Since phantom types super fast, this
+                                    // is probably interfering with the keypress events. 
+                                    // For now, we'll just add a blank space after any periods we see. In the 
+                                    // future we can either record how where the blank spaces were inserted and 
+                                    // move left that many times and hit delete, or we can wait for workflowy
+                                    // to finish it's underlining / hypertexting business before continuing
+                                    // to type a web address. Or we can keep moving left until we're
+                                    // about to hit a blank character and then hit the delete key
+                                    // Probably the best thing to do is to break the string up by '.' characters,
+                                    // then to wait for a bit after entering a the first /second character
+                                    // after that initial period.
+                                    //  
+                                    //page.sendEvent('keypress', JSON.stringify(txt), null, null, 0);
+                                    //
+                                    txt = txt.replace("http://","");
+                                    txt = txt.split(".").join(". ");
+                                    
+                                    console.log("The new txt is: " + txt);
+                                    
                                     page.sendEvent('keypress', txt, null, null, 0);
 
                                     setTimeout(function() {
